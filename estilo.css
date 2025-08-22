@@ -97,6 +97,7 @@ section { scroll-margin-top: 100px; }
   display: grid;
   grid-template-columns: 1.1fr 1.2fr;  /* use 1fr 1fr se quiser simétrico */
   gap: 40px;
+  margin: 50px auto 55px;
   background: var(--fundo-sec);
   border-radius: 18px;
   padding: 60px;
@@ -154,34 +155,179 @@ section { scroll-margin-top: 100px; }
 .link-inline { color: var(--azul); text-decoration: none; font-weight: 700; }
 .link-inline:hover { text-decoration: underline; }
 
+.dashboard-preview-img {
+  max-width: 100%;
+  max-height: 220px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  background: #fff;
+}
 .preview {
-  min-height: 240px;              /* evita "apertar" vertical */
-  margin: 50px 0 20px;
-  padding: 28px 20px;             /* respiro interno */
-  border: 2px dashed #cfd3ff;
-  border-radius: 16px;
-  display: flex;                  /* centralização mais controlada */
-  flex-direction: column;
+  background: transparent; /* Remove o fundo lilás */
+  border: none;            /* Remove a borda tracejada */
+  margin: 80px 0px 0px;
+  box-shadow: none;
+  padding: 0;
+  min-height: unset;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 12px;
-  color: var(--azul);
-  background: #eef1ff;
 }
 .preview i { font-size: 2rem; }
 
 /* ===== CONTATO / PÁGINAS ===== */
 .page { padding: 100px 40px; max-width: 1400px; margin: auto; }
-.page h1 { color: var(--azul); margin-bottom: 20px; text-align: center; font-size: 2.4rem; }
+.page h1 { color: var(--azul); margin-bottom: 50px; text-align: center; font-size: 2.4rem; }
 .page p { color: var(--cinza); margin-bottom: 15px; font-size: 1.15rem; }
 
 form { display: grid; gap: 15px; max-width: 500px; margin: 30px auto 0; }
 input, textarea {
-  padding: 12px; border: 1px solid #ddd; border-radius: 6px;
+  padding: 12px; width: 62% ; margin: 0px 80px 0px; border: 1px solid #ddd; border-radius: 6px;
   font-family: 'Montserrat', sans-serif; background: #fff;
 }
-button { background: var(--azul); color: #fff; border: none; padding: 12px; font-weight: 700; border-radius: 8px; cursor: pointer; transition: 0.3s; }
-button:hover { background: #030356; }
+
+form textarea {
+  resize: none; max-width: 100%;
+}
+
+button {
+  background: var(--azul); 
+  color: #fff; 
+  border: none;
+  margin: auto; 
+  padding: 12px; 
+  font-weight: 700; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: 0.3s; }
+
+  button:hover { background: #030356; }
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 40px 32px;
+  max-width: 500px;
+  width: 100%;
+  margin: 50px auto 0;
+  gap: 28px;
+}
+
+form {
+  width: 100%;
+}
+
+.contact-info-below {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.contact-info-below p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.contact-info-below i {
+  font-size: 1.5rem;
+  color: #25D366; /* WhatsApp verde */
+}
+
+.contact-info-below i.fa-microsoft {
+  color: #0072C6; /* Outlook azul */
+}
+
+.contact-info-below a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+
+.contact-info-below a:hover {
+  color: var(--azul);
+}
+
+.contato-centralizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  padding: 0 10px;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 40px 32px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 28px;
+}
+
+form {
+  width: 100%;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+  display: grid;
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.contact-info-below {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.contact-info-below p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.contact-info-below i {
+  font-size: 1.5rem;
+  color: #25D366; /* WhatsApp verde */
+}
+
+.contact-info-below i.fa-microsoft {
+  color: #0072C6; /* Outlook azul */
+}
+
+.contact-info-below a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+  word-break: break-all;
+}
+
+.contact-info-below a:hover {
+  color: var(--azul);
+}
 
 /* ===== SKILLS BAR ===== */
 .skills-bar { background: var(--azul); color: #fff; padding: 15px 0; overflow: hidden; white-space: nowrap; position: relative; }
@@ -190,6 +336,73 @@ button:hover { background: #030356; }
 .skills-track i { margin-right: 8px; }
 @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
+
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .contact-box {
+    padding: 24px 10px;
+    max-width: 98vw;
+  }
+  form {
+    padding: 18px 6px;
+  }
+}
+
+/* Fade-in animado */
+.fade-in { opacity: 0; transform: translateY(40px); transition: all 2.5s cubic-bezier(.4,0,.2,1); }
+.fade-in.show { opacity: 1; transform: none; }
+
+/* Cards com efeito ao passar o mouse */
+.card {
+  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s cubic-bezier(.4,0,.2,1);
+}
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+  z-index: 2;
+}
+
+/* Contato mais caprichado */
+form {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 32px 24px;
+}
+form input, form textarea {
+  padding-left: 38px;
+  position: relative;
+}
+.form-group {
+  position: relative;
+}
+.form-group i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--azul);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+form button {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Botão de baixar currículo */
+.btn.cv {
+  background: #fff;
+  color: var(--azul);
+  border: 2px solid var(--azul);
+  margin-left: 10px;
+}
+.btn.cv:hover {
+  background: var(--azul);
+  color: #fff;
+}
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 1024px) {
   .about-panel, .portfolio-panel { grid-template-columns: 1fr; }

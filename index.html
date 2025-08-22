@@ -27,6 +27,7 @@
         <a href="#contato">Contato</a>
       </nav>
     </header>
+    
 
     <!-- HOME -->
     <section id="home" class="hero">
@@ -76,7 +77,7 @@
     </div>
 
     <!-- SOBRE -->
-    <section id="sobre" class="panel about-panel">
+    <section id="sobre" class="panel about-panel fade-in">
       <div class="about-media">
         <img class="about-photo" src="Rui2.png" alt="Rui Laurentino" />
       </div>
@@ -90,14 +91,13 @@
           automação, sempre com objetivo de gerar valor de negócio com rapidez e
           clareza.
         </p>
-        <a class="btn" href="#portfolio"
-          ><i class="fa-solid fa-arrow-right"></i> Ver Portfólio</a
-        >
+        <a class="btn" href="#portfolio"><i class="fa-solid fa-arrow-right"></i> Ver Portfólio</a>
+<a class="btn cv" href="curriculo.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Baixar Currículo</a>
       </div>
     </section>
 
     <!-- FORMAÇÃO + HABILIDADES (mesma seção) -->
-    <section class="panel education-panel" id="formacao">
+    <section class="panel education-panel fade in" id="formacao">
       <div class="panel-header">
         <h2>Minha <span>Formação</span></h2>
         <p>Cursos e graduação</p>
@@ -178,7 +178,7 @@
     </section>
 
     <!-- PORTFÓLIO -->
-    <section id="portfolio" class="panel portfolio-panel">
+    <section id="portfolio" class="panel portfolio-panel fade-in">
       <div class="portfolio-left">
         <h2>Portfólio <span>em Destaque</span></h2>
         <p class="lead">
@@ -201,33 +201,41 @@
       </div>
       <div class="portfolio-right">
         <div class="preview">
-          <i class="fa-solid fa-chart-column"></i>
-          <p>Prévia do Dashboard</p>
-        </div>
+          <img src="dashboard-ibyte.png" alt="Prévia do Dashboard iByte" class="dashboard-preview-img" />
+      </div>
       </div>
     </section>
 
     <!-- CONTATO -->
-    <section id="contato" class="page">
-      <h1>Contato</h1>
-      <p>
-        📱 WhatsApp:
-        <a href="https://wa.me/5583998787601" target="_blank"
-          >(83) 99878-7601</a
-        >
-      </p>
-      <p>
-        ✉️ Email:
-        <a href="mailto:rui.laurentino@outlook.com"
-          >rui.laurentino@outlook.com</a
-        >
-      </p>
-      <form>
-        <input type="text" placeholder="Seu Nome" required />
-        <input type="email" placeholder="Seu Email" required />
-        <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+    <section id="contato" class="contato-centralizado page fade-in">
+      <h1>Fale comigo!</h1>
+      <div class="contact-box">
+        <form>
+          <div class="form-group">
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="Seu Nome" required />
+          </div>
+          <div class="form-group">
+            <i class="fa fa-envelope"></i>
+            <input type="email" placeholder="Seu Email" required />
+          </div>
+          <div class="form-group">
+            <i class="fa fa-comment-dots"></i>
+            <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
+          </div>
+          <button type="submit"><i class="fa fa-paper-plane"></i> Enviar</button>
+        </form>
+        <div class="contact-info-below">
+          <p>
+            <i class="fab fa-whatsapp"></i>
+            <a href="https://wa.me/5583998787601" target="_blank">(83) 99878-7601</a>
+          </p>
+          <p>
+            <i class="fa fa-envelope" style="color:#070790"></i>
+            <a href="mailto:rui.laurentino@outlook.com">rui.laurentino@outlook.com</a>
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Skills bar -->
@@ -259,27 +267,31 @@
 
     <!-- JS: indicador azul no menu conforme a seção visível -->
     <script>
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll("#main-nav a");
+      // Fade-in animado nas seções
+      const fadeEls = document.querySelectorAll('.fade-in');
+      const fadeObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, { threshold: 0.15 });
+      fadeEls.forEach(el => fadeObs.observe(el));
 
-      const obs = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const id = entry.target.getAttribute("id");
-              navLinks.forEach((a) => {
-                a.classList.toggle(
-                  "active",
-                  a.getAttribute("href") === "#" + id
-                );
-              });
-            }
-          });
-        },
-        { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 }
-      );
-
-      sections.forEach((sec) => obs.observe(sec));
+      // Menu ativo 
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('#main-nav a');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(a => {
+              a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+            });
+          }
+        });
+      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
+      sections.forEach(sec => obs.observe(sec));
     </script>
   </body>
 </html>
