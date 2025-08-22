@@ -27,7 +27,6 @@
         <a href="#contato">Contato</a>
       </nav>
     </header>
-    
 
     <!-- HOME -->
     <section id="home" class="hero">
@@ -46,7 +45,10 @@
         </div>
       </div>
       <div class="hero-img">
-        <img src="Rui2.png" alt="Foto profissional de Rui Laurentino" />
+        <img
+          src="Arquivos/Rui2.png"
+          alt="Foto profissional de Rui Laurentino"
+        />
       </div>
     </section>
     <!-- Skills bar -->
@@ -79,7 +81,7 @@
     <!-- SOBRE -->
     <section id="sobre" class="panel about-panel fade-in">
       <div class="about-media">
-        <img class="about-photo" src="Rui2.png" alt="Rui Laurentino" />
+        <img class="about-photo" src="Arquivos/Rui2.png" alt="Rui Laurentino" />
       </div>
       <div class="about-content">
         <h2>Sobre <span>mim</span></h2>
@@ -91,8 +93,12 @@
           automação, sempre com objetivo de gerar valor de negócio com rapidez e
           clareza.
         </p>
-        <a class="btn" href="#portfolio"><i class="fa-solid fa-arrow-right"></i> Ver Portfólio</a>
-<a class="btn cv" href="curriculo.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Baixar Currículo</a>
+        <a class="btn" href="#portfolio"
+          ><i class="fa-solid fa-arrow-right"></i> Ver Portfólio</a
+        >
+        <a class="btn cv" href="curriculo.pdf" download
+          ><i class="fa-solid fa-file-arrow-down"></i> Baixar Currículo</a
+        >
       </div>
     </section>
 
@@ -201,8 +207,12 @@
       </div>
       <div class="portfolio-right">
         <div class="preview">
-          <img src="dashboard-ibyte.png" alt="Prévia do Dashboard iByte" class="dashboard-preview-img" />
-      </div>
+          <img
+            src="Arquivos/dashboard-ibyte.png"
+            alt="Prévia do Dashboard iByte"
+            class="dashboard-preview-img"
+          />
+        </div>
       </div>
     </section>
 
@@ -223,16 +233,22 @@
             <i class="fa fa-comment-dots"></i>
             <textarea rows="5" placeholder="Sua Mensagem" required></textarea>
           </div>
-          <button type="submit"><i class="fa fa-paper-plane"></i> Enviar</button>
+          <button type="submit">
+            <i class="fa fa-paper-plane"></i> Enviar
+          </button>
         </form>
         <div class="contact-info-below">
           <p>
             <i class="fab fa-whatsapp"></i>
-            <a href="https://wa.me/5583998787601" target="_blank">(83) 99878-7601</a>
+            <a href="https://wa.me/5583998787601" target="_blank"
+              >(83) 99878-7601</a
+            >
           </p>
           <p>
-            <i class="fa fa-envelope" style="color:#070790"></i>
-            <a href="mailto:rui.laurentino@outlook.com">rui.laurentino@outlook.com</a>
+            <i class="fa fa-envelope" style="color: #070790"></i>
+            <a href="mailto:rui.laurentino@outlook.com"
+              >rui.laurentino@outlook.com</a
+            >
           </p>
         </div>
       </div>
@@ -268,30 +284,39 @@
     <!-- JS: indicador azul no menu conforme a seção visível -->
     <script>
       // Fade-in animado nas seções
-      const fadeEls = document.querySelectorAll('.fade-in');
-      const fadeObs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-          }
-        });
-      }, { threshold: 0.15 });
-      fadeEls.forEach(el => fadeObs.observe(el));
+      const fadeEls = document.querySelectorAll(".fade-in");
+      const fadeObs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+      fadeEls.forEach((el) => fadeObs.observe(el));
 
-      // Menu ativo 
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('#main-nav a');
-      const obs = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
-            navLinks.forEach(a => {
-              a.classList.toggle('active', a.getAttribute('href') === '#' + id);
-            });
-          }
-        });
-      }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
-      sections.forEach(sec => obs.observe(sec));
+      // Menu ativo
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll("#main-nav a");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.getAttribute("id");
+              navLinks.forEach((a) => {
+                a.classList.toggle(
+                  "active",
+                  a.getAttribute("href") === "#" + id
+                );
+              });
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 }
+      );
+      sections.forEach((sec) => obs.observe(sec));
     </script>
   </body>
 </html>
