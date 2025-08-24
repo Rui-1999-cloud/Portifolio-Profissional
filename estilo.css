@@ -418,7 +418,7 @@ form button {
   .panel-divider { margin: 14px 0 6px; }
 }
 
-/* === Patch: melhorias de responsividade mobile (cole no final do estilo.css) === */
+/* === Patch: melhorias de responsividade mobile === */
 @media (max-width: 600px) {
   /* Header / nav */
   header {
