@@ -577,3 +577,37 @@ form button {
   /* Pequeno espaçamento entre os dois botões */
   .about-content .btn + .btn.cv { margin-top: 8px !important; }
 }
+/* ===== Alinhar botões lado-a-lado no mobile (<=600px) ===== */
+@media (max-width: 600px) {
+  /* Faz os botões aparecerem inline, com largura automática e mesmo padding */
+  .about-content .btn,
+  .about-content .btn.cv {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    margin: 10px 6px 0 !important;
+    padding: 10px 18px !important;
+    box-sizing: border-box;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+
+  /* Espaçamento entre os dois botões */
+  .about-content .btn + .btn.cv {
+    margin-left: 8px !important;
+    margin-top: 10px !important;
+  }
+
+  /* Mantém aparência do outline do CV quando inline */
+  .about-content .btn.cv {
+    background: #fff !important;
+    color: var(--azul) !important;
+    border: 2px solid var(--azul) !important;
+  }
+
+  /* Centraliza os botões sem forçar todo o texto a centralizar (apenas afetará elementos inline) */
+  .about-content { text-align: center; }
+
+  /* Se quiser que fiquem com largura igual em telas maiores que mobile, remova o !important acima e use flex no container */
+}
