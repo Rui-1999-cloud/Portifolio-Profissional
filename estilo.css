@@ -110,7 +110,7 @@ section { scroll-margin-top: 100px; }
 .about-content h2 { margin-top: 0; font-size: 2.4rem; color: var(--texto); margin-bottom: 12px; }
 .about-content h2 span { color: var(--azul); }
 .about-content .lead { font-size: 1.2rem; color: var(--texto); margin-bottom: 26px; line-height: 1.7; }
-.btn { display: inline-flex; align-items: center; gap: 10px; background: var(--azul); color: #fff; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; }
+.btn { display: inline-flex; align-items: center; margin: auto auto auto; gap: 10px; background: var(--azul); color: #fff; padding: 12px 20px; border-radius: 10px; text-decoration: none; font-weight: 700; }
 .btn:hover { background: #030356; }
 
 /* ===== CARDS (habilidades e formação) ===== */
