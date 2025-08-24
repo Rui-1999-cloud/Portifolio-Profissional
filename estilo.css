@@ -75,7 +75,7 @@ section { scroll-margin-top: 100px; }
 
 .btns a {
   background: var(--azul); color: #fff; padding: 14px 32px; border-radius: 8px;
-  text-decoration: none; margin-right: 15px; font-weight: 700; transition: 0.3s; font-size: 1.1rem;
+  text-decoration: none; margin-right: 10px; font-weight: 700; transition: 0.3s; font-size: 1.1rem;
 }
 .btns a:hover { background: #030356; }
 .btns .outline { background: transparent; border: 2px solid var(--azul); color: var(--azul); }
