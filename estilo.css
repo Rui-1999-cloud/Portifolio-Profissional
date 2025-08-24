@@ -540,3 +540,40 @@ form button {
   .skills-track span { margin: 0 10px; font-size: 0.9rem; }
   .hero-img img { width: 64%; max-width: 220px; }
 }
+
+/* ===== Patch: botões empilhados e alinhados no mobile ===== */
+@media (max-width: 600px) {
+  /* Força botões a aparecerem como blocos centralizados e com mesma largura */
+  .about-content .btn,
+  .about-content .btn.cv,
+  .btns a { 
+    display: block !important;
+    width: min(360px, 92%) !important;
+    margin: 10px auto 0 !important;
+    text-align: center !important;
+    box-sizing: border-box;
+  }
+
+  /* Zera margens laterais que quebravam o alinhamento */
+  .about-content .btn.cv,
+  .btn.cv { margin-left: 0 !important; }
+
+  /* Padding / radius mais confortáveis em telas pequenas */
+  .about-content .btn,
+  .about-content .btn.cv,
+  .btns a {
+    padding: 10px 16px !important;
+    border-radius: 10px !important;
+    font-size: 0.98rem !important;
+  }
+
+  /* Garantir contraste do outline quando empilhado */
+  .about-content .btn.cv {
+    background: #fff !important;
+    color: var(--azul) !important;
+    border: 2px solid var(--azul) !important;
+  }
+
+  /* Pequeno espaçamento entre os dois botões */
+  .about-content .btn + .btn.cv { margin-top: 8px !important; }
+}
