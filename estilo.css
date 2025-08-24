@@ -322,7 +322,7 @@ button:hover { background: #030356; }
 .fade-in { opacity: 0; transform: translateY(10px); transition: opacity .6s ease, transform .6s ease; }
 .fade-in.show { opacity: 1; transform: translateY(0); }
 
-/* ===== Patch: melhorias de responsividade mobile ===== */
+/* ===== Patch: melhorias de responsividade mobile s ===== */
 @media (max-width: 600px) {
   /* Header compacto e menu que quebra sem sobrepor */
   header {
