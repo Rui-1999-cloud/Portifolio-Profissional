@@ -612,3 +612,33 @@ form button {
 
   /* Se quiser que fiquem com largura igual em telas maiores que mobile, remova o !important acima e use flex no container */
 }
+/* ===== Ajustes específicos para telas abaixo de 768px ===== */
+@media (max-width: 768px) {
+  /* Só exibe o logo, esconde nav */
+  #main-nav {
+    display: none !important;
+  }
+
+  /* Centraliza o logo */
+  header {
+    justify-content: center;
+    padding: 14px 16px;
+  }
+
+  header .logo a {
+    font-size: 1.2rem;
+  }
+
+  /* Reduz a barra (underline) do link ativo quando o menu aparecer em telas >768 */
+  header nav a::after {
+    bottom: -2px;
+    height: 2px;
+    background: var(--azul);
+  }
+
+  header nav a.active::after {
+    width: 40%; /* underline menor, não atravessa o texto todo */
+    margin: 0 auto;
+    left: 30%;  /* centraliza o underline sob o texto */
+  }
+}
